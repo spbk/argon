@@ -40,7 +40,7 @@ function buildSchema(names) {
     }
     usedNames.add(fieldName);
 
-    return {name: fieldName, type: 'STRING'};
+    return {name: fieldName, type: fieldName === 'date' ? 'DATE' : 'STRING'};
   });
 
   return {fields};
